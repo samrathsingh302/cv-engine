@@ -1,4 +1,4 @@
-<!-- FICTIONAL VALIDATION CV — synthetic person, NOT real. Authored for cv-editor P2 synthetic-validation (Academic / Research genre, UK postdoc). No real individual, university, or journal is depicted; all venue names are invented. Seeded with deliberate failure modes for the /improve-cv honesty + quality gate. -->
+<!-- FICTIONAL VALIDATION CV — synthetic person, NOT real. Authored for cv-editor P2 synthetic-validation (Academic / Research genre, UK postdoc). No real individual, university, or journal is depicted; all venue names are invented. Seeded with deliberate failure modes for the /improve-cv honesty + quality gate, including the garbled institution name "University of Strathm?re" (the literal ? is intentional — the skill must query it, never silently guess a spelling). -->
 
 # Dr Eilidh Marrowbeck
 
