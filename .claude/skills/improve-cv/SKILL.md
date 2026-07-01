@@ -95,7 +95,9 @@ your adjusted weights). Score it; list Tier 1/2/3 improvements.
    strengthens to Z".
 
 Default `<output_dir>`: `users/<profile>/output/Improve_<FirstnameLastname>/` (the profile
-owner's workspace — matches the P6 layout). A session file
+owner's workspace — matches the P6 layout). With no profile set up (a fresh engine clone —
+this skill needs no profile), use `users/default/output/…` and create it; `users/` is
+gitignored, so outputs never commit. A session file
 (`session_<name>.md`) records genre, target, assumptions, score, and open questions. If the
 subject's name is a placeholder/anonymous, use a descriptive slug (e.g. `Improve_<Genre>Example`).
 
