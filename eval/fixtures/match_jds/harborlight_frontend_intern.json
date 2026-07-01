@@ -1,0 +1,28 @@
+{
+  "jd": "harborlight_frontend_intern",
+  "title": "Front-End Engineering Internship",
+  "company": "Harborlight",
+  "fictional": true,
+  "dimensions": {
+    "ats_keywords":      {"weight": 15, "score": 6.0},
+    "tagline":           {"weight": 8,  "score": 6.5},
+    "skills":            {"weight": 10, "score": 6.0},
+    "bullet_quality":    {"weight": 22, "score": 6.0},
+    "projects_evidence": {"weight": 15, "score": 6.0},
+    "narrative":         {"weight": 12, "score": 6.5},
+    "company_role_fit":  {"weight": 13, "score": 5.5},
+    "page_visual":       {"weight": 5,  "score": 7.0}
+  },
+  "strongest_matches": [
+    {"jd_req": "builds responsive UI components",
+     "evidence": "wrote the React UI for a personal task app",
+     "source": "examples/match_jds/fictional_kb/project_taskqueue.md#L9"}
+  ],
+  "fatal_gaps": [
+    {"requirement": "design systems / accessibility (WCAG)",
+     "note": "no accessibility or design-system evidence anywhere in the KB"},
+    {"requirement": "CSS / visual polish at production quality",
+     "note": "back-end-leaning portfolio; UI work is functional, not polished"}
+  ],
+  "source_jd": "eval/fixtures/match_jds/jds/harborlight_frontend_intern.txt"
+}

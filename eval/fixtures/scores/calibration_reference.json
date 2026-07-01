@@ -1,0 +1,19 @@
+{
+  "_comment": "FICTIONAL FIXTURE — synthetic person, NOT real. Public calibration anchor for cv-engine: a fictional tech-student CV ('Priya Sharma', the kit's fictional demo user). The 'after' total computed from the per-dimension scores below is 83.5 by construction — the harness asserts the scorer reproduces this declared calibration_target (±2), proving the rubric scorer is sound with zero owner data present. before = a pre-improvement pass; after = post-improvement. No real individual is depicted.",
+  "source": "eval/corpus (fictional public calibration anchor; see _comment)",
+  "case": "calibration-tech",
+  "genre": "tech_student",
+  "no_target": false,
+  "calibration_reference": true,
+  "calibration_target": 83.5,
+  "dimensions": {
+    "ats_keywords":        {"weight": 15, "before": 7.0, "after": 8.0},
+    "tagline":             {"weight": 8,  "before": 6.5, "after": 8.5},
+    "skills":              {"weight": 10, "before": 7.5, "after": 8.5},
+    "bullet_quality":      {"weight": 22, "before": 7.0, "after": 8.5},
+    "projects_evidence":   {"weight": 15, "before": 7.5, "after": 9.0},
+    "narrative":           {"weight": 12, "before": 7.0, "after": 8.0},
+    "company_role_fit":    {"weight": 13, "before": 6.5, "after": 8.0},
+    "page_visual":         {"weight": 5,  "before": 7.0, "after": 8.0}
+  }
+}

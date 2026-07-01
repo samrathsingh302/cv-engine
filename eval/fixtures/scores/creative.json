@@ -1,0 +1,15 @@
+{
+  "_comment": "FICTIONAL FIXTURE — synthetic (fictional) Creative/Design CV, public P2 corpus. No real individual is depicted. no_target re-weighting with the creative tilt that Achievement Evidence (projects_evidence) = the portfolio / selected work, carried at 22%.",
+  "source": "eval/corpus/creative_niamh_carberry.md",
+  "case": "creative",
+  "genre": "creative_design",
+  "no_target": true,
+  "dimensions": {
+    "bullet_quality":    {"weight": 28, "before": 3.0, "after": 6.0},
+    "projects_evidence": {"weight": 22, "before": 2.0, "after": 4.0},
+    "narrative":         {"weight": 15, "before": 5.0, "after": 8.0},
+    "skills":            {"weight": 13, "before": 5.0, "after": 7.5},
+    "tagline":           {"weight": 12, "before": 2.0, "after": 7.0},
+    "page_visual":       {"weight": 10, "before": 6.0, "after": 8.0}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "jd": "bytework_backend_placement",
+  "title": "Backend Software Engineering Placement",
+  "company": "Bytework",
+  "fictional": true,
+  "dimensions": {
+    "ats_keywords":      {"weight": 15, "score": 9.0},
+    "tagline":           {"weight": 8,  "score": 8.0},
+    "skills":            {"weight": 10, "score": 8.5},
+    "bullet_quality":    {"weight": 22, "score": 9.0},
+    "projects_evidence": {"weight": 15, "score": 9.5},
+    "narrative":         {"weight": 12, "score": 8.0},
+    "company_role_fit":  {"weight": 13, "score": 9.0},
+    "page_visual":       {"weight": 5,  "score": 8.0}
+  },
+  "strongest_matches": [
+    {"jd_req": "REST APIs in Python",
+     "evidence": "built and deployed a Flask inventory API with auth + tests",
+     "source": "examples/match_jds/fictional_kb/experience_internship.md#L8"},
+    {"jd_req": "writes unit + integration tests",
+     "evidence": "added a pytest suite and kept CI green on a shared repo",
+     "source": "examples/match_jds/fictional_kb/project_taskqueue.md#L14"},
+    {"jd_req": "containerised services on the cloud",
+     "evidence": "Dockerised the API and deployed it to a free-tier host",
+     "source": "examples/match_jds/fictional_kb/project_taskqueue.md#L22"}
+  ],
+  "fatal_gaps": [],
+  "source_jd": "eval/fixtures/match_jds/jds/bytework_backend_placement.txt"
+}

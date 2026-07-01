@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Build artefacts
+build/
+*.pdf
+
+# Derived eval output — regenerate with: python eval/harness.py --scores-dir eval/fixtures/scores
+eval/report.md
+
+# README quickstart outputs (written to the repo root by the example commands)
+/report.md
+/match_report.md
+
+# Profile data is personal. A real person's profile must never be committed to a
+# clone or fork of the engine — the engine ships with NO profiles by design.
+users/

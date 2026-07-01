@@ -1,0 +1,29 @@
+{
+  "jd": "lumen_fullstack_intern",
+  "title": "Full-Stack Engineering Internship",
+  "company": "Lumen",
+  "fictional": true,
+  "dimensions": {
+    "ats_keywords":      {"weight": 15, "score": 7.5},
+    "tagline":           {"weight": 8,  "score": 8.0},
+    "skills":            {"weight": 10, "score": 8.0},
+    "bullet_quality":    {"weight": 22, "score": 8.0},
+    "projects_evidence": {"weight": 15, "score": 8.0},
+    "narrative":         {"weight": 12, "score": 7.5},
+    "company_role_fit":  {"weight": 13, "score": 7.0},
+    "page_visual":       {"weight": 5,  "score": 8.0}
+  },
+  "strongest_matches": [
+    {"jd_req": "builds end-to-end web features",
+     "evidence": "shipped a full-stack task app with a React front end + API",
+     "source": "examples/match_jds/fictional_kb/project_taskqueue.md#L3"},
+    {"jd_req": "comfortable across the stack",
+     "evidence": "owned both the API and the UI for a deployed side project",
+     "source": "examples/match_jds/fictional_kb/project_taskqueue.md#L11"}
+  ],
+  "fatal_gaps": [
+    {"requirement": "production TypeScript at scale",
+     "note": "only small-project React/JS evidence; no TS-at-scale claim is defensible"}
+  ],
+  "source_jd": "eval/fixtures/match_jds/jds/lumen_fullstack_intern.txt"
+}

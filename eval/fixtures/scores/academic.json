@@ -1,0 +1,15 @@
+{
+  "_comment": "FICTIONAL FIXTURE — synthetic (fictional) Academic/Research CV, public P2 corpus. No real individual, university, or journal is depicted. no_target re-weighting with the academic re-rank that makes Publications & Research Evidence (projects_evidence) the dominant dimension at 32%.",
+  "source": "eval/corpus/academic_eilidh_marrowbeck.md",
+  "case": "academic",
+  "genre": "academic_research",
+  "no_target": true,
+  "dimensions": {
+    "projects_evidence": {"weight": 32, "before": 3.0, "after": 5.0},
+    "bullet_quality":    {"weight": 24, "before": 4.0, "after": 7.0},
+    "narrative":         {"weight": 15, "before": 5.0, "after": 7.5},
+    "skills":            {"weight": 12, "before": 5.0, "after": 7.0},
+    "tagline":           {"weight": 10, "before": 2.0, "after": 7.0},
+    "page_visual":       {"weight": 7,  "before": 7.0, "after": 8.0}
+  }
+}

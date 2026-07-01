@@ -1,0 +1,54 @@
+name: CI
+
+# Gate for the public cv-engine. Runs the pytest suite, both honesty linters and the
+# eval calibration check on every push and PR. Offline by design: the engine code is
+# stdlib-only and the tests/linters make zero network calls — the only dependency the
+# runner installs is pytest itself.
+# Matrix pins 3.14 AND the project floor (3.12) so CI never greens on a version the
+# engine is not developed against.
+
+on:
+  push:
+  pull_request:
+
+# Cancel superseded runs on the same ref — friendlier to the free-tier minute budget.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test & lint (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.12', '3.14']
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pytest
+        run: python -m pip install --upgrade "pytest==9.0.3"
+
+      - name: Run test suite
+        run: python -m pytest -q
+
+      # Honesty linters gate DELIVERABLES, not inputs. eval/corpus/ holds the fictional
+      # seeded-flaw CVs — deliberately dirty inputs — so it is excluded via a git
+      # pathspec. Repo paths are space-free slugs, so $(...) word-splitting is safe here.
+      - name: Lint — AI fingerprint (FP-xxx)
+        run: python cv_builder/helpers/lint_fingerprint.py $(git ls-files '*.md' '*.tex' ':!eval/corpus') --format text
+
+      - name: Lint — provenance / anti-fabrication (PV-xxx)
+        run: python cv_builder/helpers/lint_provenance.py $(git ls-files '*.md' '*.tex' ':!eval/corpus') --format text
+
+      - name: Eval harness calibration gate
+        run: python eval/harness.py --check

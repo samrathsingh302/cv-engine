@@ -1,0 +1,15 @@
+{
+  "_comment": "FICTIONAL FIXTURE — synthetic (fictional) Public-sector / programme CV, public P2 corpus. No real individual is depicted. no_target re-weighting (mirrors the Sales sibling redistribution).",
+  "source": "eval/corpus/publicsector_meredith_caldicott.md",
+  "case": "publicsector",
+  "genre": "public_sector",
+  "no_target": true,
+  "dimensions": {
+    "bullet_quality":    {"weight": 30, "before": 3.0, "after": 6.0},
+    "projects_evidence": {"weight": 18, "before": 3.0, "after": 5.0},
+    "narrative":         {"weight": 16, "before": 6.0, "after": 8.0},
+    "skills":            {"weight": 14, "before": 5.0, "after": 7.5},
+    "tagline":           {"weight": 12, "before": 3.0, "after": 7.0},
+    "page_visual":       {"weight": 10, "before": 7.0, "after": 8.0}
+  }
+}

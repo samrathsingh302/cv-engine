@@ -1,0 +1,15 @@
+{
+  "_comment": "FICTIONAL FIXTURE — synthetic (fictional) Trades/Operations CV, public P2 corpus. No real individual is depicted. no_target re-weighting with the trades twist that Tickets/Certs presence is folded into Achievement Evidence (projects_evidence) at 20%.",
+  "source": "eval/corpus/trades_darren_hollins.md",
+  "case": "trades",
+  "genre": "trades_operations",
+  "no_target": true,
+  "dimensions": {
+    "bullet_quality":    {"weight": 28, "before": 3.0, "after": 6.0},
+    "projects_evidence": {"weight": 20, "before": 2.0, "after": 4.0},
+    "narrative":         {"weight": 16, "before": 5.0, "after": 8.0},
+    "skills":            {"weight": 14, "before": 4.0, "after": 7.0},
+    "tagline":           {"weight": 12, "before": 3.0, "after": 7.5},
+    "page_visual":       {"weight": 10, "before": 7.0, "after": 8.0}
+  }
+}

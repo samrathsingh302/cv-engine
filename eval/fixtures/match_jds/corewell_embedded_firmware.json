@@ -1,0 +1,26 @@
+{
+  "jd": "corewell_embedded_firmware",
+  "title": "Embedded Firmware Engineer",
+  "company": "Corewell",
+  "fictional": true,
+  "dimensions": {
+    "ats_keywords":      {"weight": 15, "score": 2.0},
+    "tagline":           {"weight": 8,  "score": 2.5},
+    "skills":            {"weight": 10, "score": 2.0},
+    "bullet_quality":    {"weight": 22, "score": 2.5},
+    "projects_evidence": {"weight": 15, "score": 2.0},
+    "narrative":         {"weight": 12, "score": 3.0},
+    "company_role_fit":  {"weight": 13, "score": 1.5},
+    "page_visual":       {"weight": 5,  "score": 4.0}
+  },
+  "strongest_matches": [],
+  "fatal_gaps": [
+    {"requirement": "embedded C / C++ on microcontrollers",
+     "note": "no embedded or systems-C evidence; portfolio is web/Python"},
+    {"requirement": "real-time / RTOS experience",
+     "note": "no real-time or hardware-interfacing work anywhere in the KB"},
+    {"requirement": "electronics / hardware bring-up",
+     "note": "no hardware evidence; this is a hard background gap, not a reframe"}
+  ],
+  "source_jd": "eval/fixtures/match_jds/jds/corewell_embedded_firmware.txt"
+}
