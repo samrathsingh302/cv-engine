@@ -163,6 +163,11 @@ def _validate(data, path):
         raise ValueError("manifest %s: dimensions must be a non-empty object" % path)
     total_weight = 0
     for name, spec in dims.items():
+        if name not in DIMENSION_NAMES:
+            raise ValueError(
+                "manifest %s: unknown dimension %r (allowed: %s)"
+                % (path, name, ", ".join(DIMENSION_NAMES))
+            )
         if not isinstance(spec, dict):
             raise ValueError("manifest %s dimension %r must be an object" % (path, name))
         for key in ("weight", "score"):
@@ -178,6 +183,11 @@ def _validate(data, path):
             raise ValueError(
                 "manifest %s dimension %r: score %s out of [0, 10]"
                 % (path, name, spec["score"])
+            )
+        if spec["weight"] < 0:
+            raise ValueError(
+                "manifest %s dimension %r: weight %s must be >= 0"
+                % (path, name, spec["weight"])
             )
         total_weight += spec["weight"]
     if abs(total_weight - 100) > 1e-9:
@@ -337,6 +347,8 @@ def over_budget(md_text, max_lines):
 
 def write_atomic(path, text):
     """Write ``text`` atomically (temp file + os.replace). UTF-8 no BOM, LF."""
+    parent = os.path.dirname(os.path.abspath(path))
+    os.makedirs(parent, exist_ok=True)
     tmp = path + ".tmp"
     with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(text)

@@ -190,6 +190,36 @@ def test_score_out_of_range_fail_closed(tmp_path):
         m.load_manifests(str(tmp_path))
 
 
+def test_unknown_dimension_name_fail_closed(tmp_path):
+    # The 8-dim contract is enforced, not just documented (01/07/2026 review P3:
+    # DIMENSION_NAMES was a dead constant — any invented dimension name passed).
+    bad = _manifest("x", 7.0)
+    bad["dimensions"]["zz_invented"] = bad["dimensions"].pop("tagline")
+    _write(tmp_path, "x.json", bad)
+    with pytest.raises(ValueError):
+        m.load_manifests(str(tmp_path))
+
+
+def test_negative_weight_fail_closed(tmp_path):
+    # Weights must be non-negative — {200, -100} sums to 100 but can push the
+    # projected total outside [0, 100] (01/07/2026 review P3).
+    bad = _manifest("x", 7.0)
+    bad["dimensions"]["page_visual"]["weight"] -= 100
+    bad["dimensions"]["tagline"]["weight"] += 100  # keep the sum at 100
+    _write(tmp_path, "x.json", bad)
+    with pytest.raises(ValueError):
+        m.load_manifests(str(tmp_path))
+
+
+def test_write_atomic_creates_missing_out_dir(tmp_path):
+    # A user-supplied --out under a directory that doesn't exist yet must not
+    # traceback (01/07/2026 review P3).
+    out = os.path.join(str(tmp_path), "no", "such", "dir", "report.md")
+    m.write_atomic(out, "hello\n")
+    with open(out, encoding="utf-8") as fh:
+        assert fh.read() == "hello\n"
+
+
 def test_strongest_match_missing_key_fail_closed(tmp_path):
     bad = _manifest("x", 7.0, matches=[{"jd_req": "a", "evidence": "b"}])  # no source
     _write(tmp_path, "x.json", bad)
